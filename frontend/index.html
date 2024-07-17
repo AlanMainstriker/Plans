@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проекты и задачи</title>
+    <link rel="stylesheet" href="frontend/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <form action="/create_project/{{ user_id }}">
+            <button class="add-project">+ Добавить проект</button>
+            </form>
+            <span class="hide-completed">Скрыть завершенные</span>
+            <img src="frontend/img/sunset.svg" alt="Sun Icon" class="sun-icon">
+        </header>
+
+        <main>
+            {% for project in projects %}
+            <div class="project">
+                <div class="project-header">
+                    <input type="checkbox">
+                    <h2>{{ project.name }}</h2>
+                    <div class="project-actions">
+                        <img src="frontend/img/back.svg" alt="Complete" class="hide-icon" onclick="changeIcon()">
+                        <img src="frontend/img/delete.svg" alt="Delete" class="delete-icon">
+                    </div>
+                </div>
+                <p>{{ project.description }}</p>
+                <form action="/create_task/{{user_id}}/{{project.id}}">
+                <button class="add-task">+ Добавить задачу</button>
+                </form>
+                {% for task in tasks %}
+                {% if task.project_id == project.id %}
+                <div class="task">
+                    {% if task.done == 1 %}
+                    <input type="checkbox" checked>
+                    {% endif %}
+                    {% if task.done == 0 %}
+                    <input type="checkbox">
+                    {% endif %}
+                    <span>{{ task.description }}</span>
+                    <div class="task-actions">
+                        <img src="frontend/img/edit.svg" alt="Edit" class="edit-icon">
+                        <img src="frontend/img/delete.svg" alt="Delete" class="delete-icon">
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+
+
+            {% endfor %}
+            <div>Пользователь с id {{ user_id }}</div>
+        </main>
+    </div>
+</body>
+</html>
