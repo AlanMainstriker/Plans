@@ -18,7 +18,6 @@ templates = Jinja2Templates(directory="frontend")
 def main(response: Response, request: Request, user_id: int | None = Cookie(default=None)):
     global CURRENT_USER
     if user_id == None:
-        print('aaaaaaaa')
         session = Session(bind=engine)
         ask = select(Users)
         answer = session.exec(ask).all()
@@ -206,7 +205,6 @@ def task_done(request: Request, user_id: int, project_id: int, task_id: int):
         project_user = project.user_id
         if task_project == project_id and project_user == user_id:
             if task.done == 0:
-                print('AAAAAA')
                 task.done = 1
                 session.add(task)
                 session.commit()
