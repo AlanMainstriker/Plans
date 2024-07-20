@@ -21,12 +21,14 @@ header {
 }
 
 button.add-project, button.add-task {
+
     background-color: #B530F4;
     color: white;
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
+
 }
 
 .hide-completed {
@@ -117,6 +119,56 @@ p {
     margin-left: 10px;
 }
 
-.task-list.hidden {
-    display: None
+
+.edit-button {
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-image: url('edit.svg');
+  background-size: cover;
+  cursor: pointer;
+}
+
+.edit-field {
+    display: none;
+}
+
+.edit-field.shown {
+    display: block;
+}
+
+.delete-button {
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-image: url('delete.svg');
+  background-size: cover;
+  cursor: pointer;
+}
+
+.unchecked-box {
+    width: 20px;
+  height: 20px;
+  border: none;
+  background-image: url('no.svg');
+  background-size: cover;
+  cursor: pointer;
+}
+
+.checked-box {
+    width: 20px;
+  height: 20px;
+  border: none;
+  background-image: url('check-circle.svg');
+  background-size: cover;
+  cursor: pointer;
+}
+
+.open-button {
+    width: 20px;
+  height: 20px;
+  border: none;
+  background-image: url('back.svg');
+  background-size: cover;
+  cursor: pointer;
 }

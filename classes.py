@@ -6,8 +6,8 @@ class Project(SQLModel, table=True):
     id: Optional[int] = Field(primary_key=True, default=None)
     user_id: int
     name: str
-    description: str
     done: int
+    hidden: int
 
 
 class Task(SQLModel, table=True):
@@ -19,3 +19,4 @@ class Task(SQLModel, table=True):
 
 class Users(SQLModel, table=True):
     id: Optional[int] = Field(primary_key=True, default=None)
+    hideprojects: int
