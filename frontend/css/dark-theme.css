@@ -1,0 +1,278 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #333;
+}
+
+.container {
+    max-width: 1440px;
+    min-height: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+
+button.add-project {
+
+    background-color: #777;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+button.add-task {
+
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+.hide-completed {
+    color: #ccc;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 3;
+}
+
+.project {
+    background-color: #777;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.task {
+    background-color: #888;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.project-header, .task {
+    display: flex;
+    align-items: center;
+}
+
+.project-actions, .task-actions {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.delete-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.edit-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.hide-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.show-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.sun-icon {
+    width: 40px;
+    height: 40px;
+}
+
+button.add-task {
+    margin-top: 10px;
+}
+
+h2 {
+    margin: 0 0 0 10px;
+}
+
+p {
+    margin: 10px 0 0 25px;
+    color: #333;
+}
+
+.task {
+    margin-left: 25px;
+    padding: 10px;
+}
+
+.task span {
+    margin-left: 10px;
+}
+
+
+.edit-button {
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: none;
+  background-image: url('editdark.svg');
+  background-size: cover;
+  cursor: pointer;
+}
+
+.edit-field {
+    display: none;
+}
+
+.edit-field.shown {
+    display: block;
+}
+
+.delete-button {
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: none;
+  background-image: url('deletedark.svg');
+  background-size: cover;
+  cursor: pointer;
+}
+
+.unchecked-box {
+    width: 20px;
+  height: 20px;
+  border: none;
+  background: none;
+  background-image: url('circledark.svg');
+  background-size: cover;
+  cursor: pointer;
+}
+
+.checked-box {
+    width: 20px;
+  height: 20px;
+  border: none;
+  background: none;
+  background-image: url('check-circledark.svg');
+  background-size: cover;
+  cursor: pointer;
+}
+
+.open-button {
+    width: 20px;
+  height: 20px;
+  border: none;
+  background: none;
+  background-image: url('hidedark.svg');
+  background-size: cover;
+  cursor: pointer;
+}
+
+.switch-theme {
+    width: 50px;
+  height: 50px;
+  border: none;
+  background: none;
+  background-image: url('dark.svg');
+  background-size: cover;
+  cursor: pointer;
+}
+
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 15px;
+    }
+
+    .project, .task {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 812px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-right {
+        margin-top: 10px;
+    }
+
+    .toggle-label {
+        font-size: 14px;
+    }
+
+    .project-header h2 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 414px) {
+    .container {
+        padding: 10px;
+    }
+
+    .add-project, .add-task {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .project, .task {
+        padding: 10px;
+    }
+
+    .project-header, .task {
+        flex-wrap: wrap;
+    }
+
+    .project-actions, .task-actions {
+        margin-top: 10px;
+    }
+
+    .toggle {
+        margin-right: 10px;
+    }
+
+    .icon-sun {
+        width: 25px;
+        height: 25px;
+    }
+}

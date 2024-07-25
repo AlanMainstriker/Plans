@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Проекты и задачи</title>
-    <link rel="stylesheet" href="frontend/css/style.css">
+    <link rel="stylesheet" href="frontend/css/light-theme.css" id="theme-link">
 </head>
 <body>
     <div class="container">
@@ -18,7 +18,7 @@
             {% if hideprojects == 1 %}
             <a href="/hideprojects/{{ user_id }}"><span class="hide-completed">Показать завершенные</span></a>
             {% endif %}
-            <img src="frontend/img/sunset.svg" alt="Sun Icon" class="sun-icon">
+            <button class="switch-theme" onclick="switch_theme()"></button>
         </header>
 
         <main>
@@ -26,10 +26,10 @@
             <div class="project">
                 <div class="project-header">
                     {% if project.done == 0 %}
-                    <img src="frontend/img/no.svg" alt="Complete" class="hide-icon">
+                    <button class="unchecked-box" disabled></button>
                     {% endif %}
                     {% if project.done == 1 %}
-                    <img src="frontend/img/check-circle.svg" alt="Complete" class="hide-icon">
+                    <button class="checked-box" disabled></button>
                     {% endif %}
                     <button class="edit-button" onclick="show_edit_func('{{ project.id }}Edit')"></button>
                     <form action="/editprojectname/{{ user_id }}/{{ project.id }}">
@@ -89,7 +89,22 @@
 
             {% endfor %}
             <div>Пользователь с id {{ user_id }}</div>
-
+        <script>
+            if (localStorage.getItem('theme') == 'dark') {
+                const theme = document.getElementById('theme-link')
+                theme.href = "frontend/css/dark-theme.css";
+            }
+            switch_theme = function() {
+                const theme = document.querySelector('#theme-link')
+                if (theme.getAttribute("href") == "frontend/css/light-theme.css") {
+                    theme.href = "frontend/css/dark-theme.css";
+                    localStorage.setItem('theme', 'dark');
+                  } else {
+                    theme.href = "frontend/css/light-theme.css";
+                    localStorage.setItem('theme', 'light');
+                  }
+            }
+        </script>
         </main>
     </div>
 </body>
