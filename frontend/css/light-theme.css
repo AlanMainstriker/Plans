@@ -26,7 +26,27 @@ header {
     margin-bottom: 20px;
     flex-wrap: wrap;
 }
+/* body, html {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+} */
 
+/* .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+} */
+
+/* header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+} */
 
 button.add-project, button.add-task {
 
@@ -207,6 +227,7 @@ p {
     }
 }
 
+/* Мобильные устройства (landscape) */
 @media (max-width: 812px) {
     header {
         flex-direction: column;
@@ -226,6 +247,7 @@ p {
     }
 }
 
+/* Мобильные устройства (portrait) */
 @media (max-width: 414px) {
     .container {
         padding: 10px;
