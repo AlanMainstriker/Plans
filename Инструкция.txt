@@ -1,0 +1,6 @@
+1) Поставить библиотеки sqlmodel, fastapi
+1.1) pip install sqlmodel
+1.2) pip install fastapi[ALL]
+2) В терминале перейти в директорию проекта на самый верхний уровень (на уровень с файлом main.py и папкой frontend)
+3) Запускать приложение командой в консоли
+3.1) uvicorn main:app
