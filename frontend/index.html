@@ -31,11 +31,11 @@
                     {% if project.done == 1 %}
                     <button class="checked-box" disabled></button>
                     {% endif %}
-                    <button class="edit-button" onclick="show_edit_func('{{ project.id }}Edit')"></button>
+                    <button class="edit-button" onclick="show_edit_func('{{ project.id }}ProjectEdit')"></button>
                     <form action="/editprojectname/{{ user_id }}/{{ project.id }}">
                     <h2>{{ project.name }}</h2>
-                        <input class="edit-field" type="text" id="{{ project.id }}Edit" name="newname">
-                        <button class="edit-field" id="{{ project.id }}EditButton">Сохранить</button>
+                        <input class="edit-field" type="text" id="{{ project.id }}ProjectEdit" name="newname">
+                        <button class="edit-field" id="{{ project.id }}ProjectEditButton">Сохранить</button>
                     </form>
                     <div class="project-actions">
                         <form action="/hidetasks/{{ user_id }}/{{ project.id }}">
@@ -62,10 +62,10 @@
                     <span>{{ task.description }}</span>
                     <div class="task-actions">
                         <form action="/edittaskdesc/{{user_id}}/{{project.id}}/{{task.id}}">
-                        <input class="edit-field" type="text" id="{{ task.id }}Edit" name="newdesc">
-                        <button class="edit-field" id="{{ task.id }}EditButton">Сохранить</button>
+                        <input class="edit-field" type="text" id="{{ task.id }}TaskEdit" name="newdesc">
+                        <button class="edit-field" id="{{ task.id }}TaskEditButton">Сохранить</button>
                         </form>
-                        <button class="edit-button" onclick="show_edit_func('{{ task.id }}Edit')"></button>
+                        <button class="edit-button" onclick="show_edit_func('{{ task.id }}TaskEdit')"></button>
                         <form action="/deletetask/{{ user_id }}/{{ project.id }}/{{ task.id }}">
                             <button class="delete-button"></button>
                         </form>
@@ -80,6 +80,7 @@
                     edit_field.classList.toggle('shown')
                     save_button.classList.toggle('shown')
                 }
+
 
                 </script>
                 {% endfor %}
